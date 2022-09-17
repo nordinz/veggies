@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --light: white;
+  --medium: #868686;
+  --dark: black;
+  --font-size-small: 1.3em;
+  --font-size-medium: 1.8em;
+  --font-size-medium-plus: 2.2em;
+  --font-size-big: 2.5em;
+}
+
+
+h1{
+  font-size: var(--font-size-big);
+}
+h2{
+  font-size: var(--font-size-medium-plus);
+}
+h3{
+  font-size: var(--font-size-medium);
+}
+p {
+  font-size: var(--font-size-small);
+}
+/*
+1 Header
+2 Main
+2a Main Top
+2b Main bot Grid
+2c Responsive img
+3 Find us
+4 Footer
+5 Button
+6 Media query
+
+
+*/
+* {
+  scroll-behavior: smooth;
+  font-family: Roboto, sans-serif;
+  /*inkludera padding och border i elementets höjd*/
+  box-sizing: border-box;
+  margin: 0;
+  list-style: none;
+}
+
+/*1a Header*/
+.head-container {
+  background-color: var(--dark);
+  margin: auto;
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--dark);
+  color: var(--light);
+}
+.logo {
+  width: 35%;
+  padding: 5px;
+}
+ul {
+  padding: 0;
+}
+
+.head-container ul li {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  
+}
+.head-container ul li a {
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--light);
+  text-transform: uppercase;
+}
+/*2 Main*/
+main {
+  background-color: var(--dark);
+}
+
+/*2a Main top*/
+.mainTop {
+  background-color: var(--dark);
+  color: var(--light);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)),
+    url(/inl/img/restaurant.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  max-height: 700px;
+  background-position: 25%;
+  text-align: center;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+/*2b Main bot grid*/
+.center-grid-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.grid {
+  background-color: var(--dark);
+}
+.food p {
+  font-style: italic;
+  font-weight: 400;
+}
+#a1 {
+  grid-area: a1;
+  margin: 15px 15px;
+  text-align: center;
+  padding: 20px;
+  min-height: 350px;
+}
+#a3 {
+  grid-area: a3;
+  margin: 15px 15px;
+  text-align: center;
+  padding: 20px;
+  min-height: 350px;
+}
+#b2 {
+  grid-area: b2;
+  margin: 15px 15px;
+  text-align: center;
+  padding: 20px;
+  min-height: 350px;
+}
+/*2c img*/
+.responsive {
+  width: 100%;
+  height: auto;
+}
+/*3 Find us*/
+.find-us {
+  min-height: 60vh;
+  color: var(--light);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)),
+    url(/inl/img/directions.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  max-height: 700px;
+  background-position: 25%;
+  text-align: center;
+  overflow: hidden;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.find-us a {
+  color: var(--light);
+  text-decoration: none;
+}
+
+.find-us h3 {
+  margin-bottom: 20px;
+}
+/*4 Footer*/
+.footer {
+  background-color: var(--dark);
+  color: var(--light);
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around; 
+}
+.footer section, p{
+  padding: 10px;
+}
+/* 5 Button */
+#btn {
+  position: fixed; 
+  bottom: 60px; 
+  right: 0px; 
+  z-index: 99; 
+  border: none; 
+  outline: none; 
+  color: var(--dark);
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer; 
+  border-radius: 0px;
+  font-size: var(--font-size-small);
+  padding: 5px; 
+  text-decoration: none;
+}
+#btn a{
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 800;
+}
+
+#btn:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: var(--light);
+  
+}
+/*6 media query*/
+@media screen and (min-width: 978px) {
+  .head-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--dark);
+    color: var(--light);
+  }
+  .logo {
+    width: 15%;
+  }
+  .head-container ul li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  .head-container ul li a {
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--light);
+    text-transform: uppercase;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "a1 a2 a3"
+      "b1 b2 b3";
+  }
+  #a1 {
+    grid-area: a1;
+    margin: 15px 15px;
+    text-align: center;
+    padding: 20px;
+  }
+  #a2 {
+    grid-area: a2;
+  }
+  #a3 {
+    grid-area: a3;
+    margin: 15px 15px;
+    text-align: center;
+    padding: 20px;
+  }
+  #b1 {
+    grid-area: b1;
+  }
+  #b2 {
+    grid-area: b2;
+    margin: 15px 15px;
+    text-align: center;
+    padding: 20px;
+  }
+  #b3 {
+    grid-area: b3;
+  }
+ 
+  .header ul li {
+    margin: 0 10px;
+  }
+
+  .find-us {
+    min-height: 60vh;
+    color: var(--light);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)),
+      url(/inl/img/directions.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 500px;
+    max-height: 700px;
+    background-position: 25%;
+    text-align: center;
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+ 
+  
+ 
+ 
+  .find-us h3 {
+    margin-bottom: 20px;
+  }
+  .footer {
+    background-color: var(--dark);
+    color: var(--light);
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around; 
+  }
+  .footer section{
+    padding: 10px;
+  }
+}
